@@ -11,10 +11,10 @@ public class Admin_details {
      @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int admin_Id;
     private String admin_Name;
-   private  String admin_pass;
-   
+    private  String admin_pass;
+    
    @OneToMany
-   private List<Recipe_details> list;
+   private List<Recipe_details> list= new ArrayList();
 
    public Admin_details() {
 	   
@@ -44,6 +44,7 @@ public void setAdmin_pass(String admin_pass) {
 }
 
 public List<Recipe_details> getList() {
+	
 	return list;
 }
 

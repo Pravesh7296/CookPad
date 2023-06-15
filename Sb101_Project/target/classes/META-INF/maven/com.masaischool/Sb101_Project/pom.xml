@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.masaischool</groupId>
-  <artifactId>Masai_DAO</artifactId>
+  <artifactId>Sb101_Project</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <name>Masai_DAO</name>
+  <name>Sb101_Project</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -32,16 +32,7 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.28</version>
 			</dependency>
-			<dependency>
-				<groupId>com.masaischool</groupId>
-				<artifactId>Employee_DAO_hibernate</artifactId>
-				<version>0.0.1-SNAPSHOT</version>
-			</dependency>
-			<dependency>
-				<groupId>com.masaischool</groupId>
-				<artifactId>hibernate</artifactId>
-				<version>0.0.1-SNAPSHOT</version>
-			</dependency>
+			
   </dependencies>
 
   <build>

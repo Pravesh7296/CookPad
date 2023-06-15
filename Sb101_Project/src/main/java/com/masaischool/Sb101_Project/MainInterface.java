@@ -8,26 +8,31 @@ import javax.persistence.Query;
 
 
 public class MainInterface {
+//////////////////////////color//////////////
+public static final String ANSI_RESET = "\u001B[0m";
+public static final String ANSI_YELLOW = "\u001B[33m";
+public static final String ANSI_GREEN = "\u001B[32m";
+public static final String ANSI_PURPLE = "\u001B[34m";
+public static final String ANSI_BLUE = "\u001B[35m";
+public static final String ANSI_RED = "\u001B[31m";
+/////////////////////////////////////////////////////////
+
+
 ////////////////////////Admin signUp///////////////////////////////////
 	static void AdminSignUp(Scanner sc) {
-		  System.out.println("Enter User Name");
+		  System.out.println(ANSI_GREEN+"Enter User Name");
 	      String user = sc.next();
 	      System.out.println("Enter Password");
 	      String password = sc.next();
 	      Admin_Services.AdminSignUp(user,password); 
 	}
-	
+////////////////////////////AdminLogin/////////////////////////////////////	
       static void AdminLogin(Scanner sc) {
       System.out.println("Enter User Name");
       String user = sc.next();
       System.out.println("Enter Password");
       String password = sc.next();
-      EntityManager em = App.getEntMn();
-       Query que = em.createQuery("Select a from Admin_details");
-       List<Admin_details> list = que.getResultList();
-       for(Admin_details ad : list) {
-    	  
-       }
+      Admin_Services.AdminLogIn(user,password);
       }
 ///////////////////CustomerSigUp/////////////////////////////////////
       static void CustomerSigUp(Scanner sc) {
@@ -51,7 +56,7 @@ public class MainInterface {
               String user = sc.next();
               System.out.println("Enter Password");
               String password = sc.next();
-               Customer_Services.signUp(user, password);
+               Customer_Services.logIn(user, password);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

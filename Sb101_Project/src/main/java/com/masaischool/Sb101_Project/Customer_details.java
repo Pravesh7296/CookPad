@@ -8,6 +8,7 @@ public class Customer_details {
       @GeneratedValue(strategy = GenerationType.IDENTITY)
       private int Customer_id;
       private String Customer_Name;
+      
       private String Customer_Pass;
       public Customer_details() {
     	  
