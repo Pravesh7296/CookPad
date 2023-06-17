@@ -2,7 +2,7 @@
 
 CookPad is a console-based Management scheduling system designed to streamline the process of scheduling Management between customers and service providers. This software application aims to provide a convenient and efficient platform for managing Recipe, reducing scheduling conflicts, and enhancing customer satisfaction
 #
-![logo]()
+![logo](https://github.com/chiku7296/CulinaryCompass/blob/main/image/Screenshot%20(83).png)
 ## Types of Users
 - Customer/Client: The customers are the end-users of the system who want buy recipe. Like or favorite recipes to save them for future reference.
 Log out from the Recipe Management System.
