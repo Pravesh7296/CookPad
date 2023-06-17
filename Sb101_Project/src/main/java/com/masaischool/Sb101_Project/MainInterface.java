@@ -20,45 +20,45 @@ public static final String ANSI_RED = "\u001B[31m";
 
 ////////////////////////Admin signUp///////////////////////////////////
 	static void AdminSignUp(Scanner sc) {
-		  System.out.println(ANSI_GREEN+"Enter User Name");
+		  System.out.println(ANSI_GREEN+"Enter User Name"+ANSI_RESET);
 	      String user = sc.next();
-	      System.out.println("Enter Password");
+	      System.out.println(ANSI_GREEN+"Enter Password"+ANSI_RESET);
 	      String password = sc.next();
 	      Admin_Services.AdminSignUp(user,password); 
 	}
 ////////////////////////////AdminLogin/////////////////////////////////////	
       static void AdminLogin(Scanner sc) {
-      System.out.println("Enter User Name");
+      System.out.println(ANSI_GREEN+"Enter User Name"+ANSI_RESET);
       String user = sc.next();
-      System.out.println("Enter Password");
+      System.out.println(ANSI_GREEN+"Enter Password"+ANSI_RESET);
       String password = sc.next();
       Admin_Services.AdminLogIn(user,password);
       }
 ///////////////////CustomerSigUp/////////////////////////////////////
       static void CustomerSigUp(Scanner sc) {
     	  try {
-    		  System.out.println("Enter Customer Name");
+    		  System.out.println(ANSI_GREEN+"Enter Customer Name"+ANSI_RESET);
     			  
     		  
               String user = sc.next();
-              System.out.println("Enter Password");
+              System.out.println(ANSI_GREEN+"Enter Password"+ANSI_RESET);
               String password = sc.next();
                Customer_Services.signUp(user, password);
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			System.out.println(ANSI_RED+e.getMessage()+ANSI_RESET);
 		}
          
           }
 /////////////////////CustomerLogin//////////////////////////////////////////
       static void CustomerLogin(Scanner sc) {
     	  try {
-    		  System.out.println("Enter Customer Name");
+    		  System.out.println(ANSI_GREEN+"Enter Customer Name"+ANSI_RESET);
               String user = sc.next();
-              System.out.println("Enter Password");
+              System.out.println(ANSI_GREEN+"Enter Password"+ANSI_RESET);
               String password = sc.next();
                Customer_Services.logIn(user, password);
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			System.out.println(ANSI_RED+e.getMessage()+ANSI_RESET);
 		}
       }
 }

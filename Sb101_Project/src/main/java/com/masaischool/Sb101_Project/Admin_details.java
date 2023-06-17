@@ -58,8 +58,8 @@ public int getAdmin_Id() {
 
 @Override
 public String toString() {
-	return "Admin_details [admin_Id=" + admin_Id + ", admin_Name=" + admin_Name + ", admin_pass=" + admin_pass
-			+ ", list=" + list + "]";
+	return " Admin_Id : " + admin_Id + " Admin_Name : " + admin_Name + " Admin_password : " + admin_pass
+;			
 }
    
    

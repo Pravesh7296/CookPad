@@ -27,13 +27,16 @@ public static final String ANSI_RED = "\u001B[31m";
             Query que =em.createQuery("Select a from Customer_details a");
  		   int count=0;
  		  List<Customer_details> add = que.getResultList();
+ 		  if(add.size()==0) {
+ 			  System.out.println(ANSI_RED+"Customer Not Found ! "+ANSI_RESET);
+ 		  }else {
  			for(Customer_details ad : add) {
  				if(ad.getCustomer_Name().equals(cus_name)) {
  					count++;
  				}
  			}
  			if(count==1) {
- 				System.out.println(ANSI_YELLOW+cus_name+ANSI_BLUE+"  You already Registered please Login"+ANSI_RESET);
+ 				System.out.println(ANSI_YELLOW+cus_name+ANSI_GREEN+"  You already Registered please Login"+ANSI_RESET);
  			}else {
  				Customer_details ad = new Customer_details();
  				ad.setCustomer_Name(cus_name);
@@ -41,10 +44,10 @@ public static final String ANSI_RED = "\u001B[31m";
  				ts.begin();
  				em.persist(ad);
  				ts.commit();
- 				System.out.println(ANSI_BLUE+"Thanks " +ANSI_YELLOW+cus_name+ ANSI_BLUE+" For SignUp"+ANSI_RESET);
+ 				System.out.println(ANSI_GREEN+"Thanks " +ANSI_YELLOW+cus_name+ ANSI_GREEN+" For SignUp"+ANSI_RESET);
  			}
         	
-        
+ 		  }
 		} catch (Exception e) {
 			System.out.println(ANSI_RED+e.getLocalizedMessage()+ANSI_RESET);
 		}finally {
@@ -65,7 +68,7 @@ public static final String ANSI_RED = "\u001B[31m";
             
        Customer_details cd = (Customer_details) que.getSingleResult();
        if(cd.getCustomer_Name().equals(cus_name) && cd.getCustomer_Pass().equals(cus_pass)) {
-    	   System.out.println(ANSI_BLUE+"Login Successfully"+ANSI_RESET);
+    	   System.out.println(ANSI_GREEN+"Login Successfully"+ANSI_RESET);
     	   Cus_Role(cus_name);
        }else {
     	   System.out.println(ANSI_RED+"Enter right credentials"+ANSI_RESET);
@@ -84,7 +87,7 @@ public static final String ANSI_RED = "\u001B[31m";
              do {
             	 try {
             		    System.out.println(ANSI_BLUE+"-------------------------");
-            		    System.out.println("|  Welcome "+ANSI_YELLOW+name+ANSI_BLUE+"      |");
+            		    System.out.println("|  Welcome : "+ANSI_YELLOW+name+ANSI_BLUE+"      |");
             			System.out.println("-------------------------");
                      	System.out.println(ANSI_YELLOW+"ENTER : 1 FOR View All Recipes");
                      	System.out.println("ENTER : 2 FOR Filter Recipes");
@@ -122,10 +125,10 @@ public static final String ANSI_RED = "\u001B[31m";
         	
         	List<Recipe_details> list = que.getResultList();
         	if(list.size()==0) {
-        		System.out.println(ANSI_RED+"Sorry No Recipes available"+ANSI_RESET);
+        		System.out.println(ANSI_RED+"Sorry No Recipes available !"+ANSI_RESET);
         	}else {
             for(Recipe_details ad : list) {
-            	System.out.println(ad);
+            	System.out.println(ANSI_YELLOW+ad+ANSI_RESET);
             }
         	}		
          }
@@ -139,12 +142,15 @@ public static final String ANSI_RED = "\u001B[31m";
              
              
   List<Recipe_details> list = que.getResultList();
+  if(list.size()==0) {
+	  System.out.println(ANSI_GREEN+"No Recipes available for "+name+ANSI_RESET);
+  }else {
   for(Recipe_details rd : list) {
 	  if(rd.getIngredients().contains(name)) {
-		  System.out.println(rd);
+		  System.out.println(ANSI_YELLOW+rd+ANSI_RESET);
 	  }
   }
-         }  
+  }    }  
 ////////////////////////////Like_Recipe//////////////////////////////////////
          static void LikeRecipe(Scanner sc) {
         	 System.out.println(ANSI_BLUE+"Enter Recipe_Id"+ANSI_RESET);

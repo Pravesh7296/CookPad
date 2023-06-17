@@ -80,8 +80,9 @@ public void setAd(Admin_details ad) {
 
 @Override
 public String toString() {
-	return "Recipe_details [Recipe_Id=" + Recipe_Id + ", Recipe_Name=" + Recipe_Name + ", ingredients=" + ingredients
-			+ ", preparation=" + preparation + ", Like=" + Recipe_Like + "]";
+	return "Recipe_Id : " + Recipe_Id   
+			+ "|| Recipe_Name : " + Recipe_Name + "|| ingredients : " + ingredients
+			+ "||  preparation : " + preparation + "||  Like : " + Recipe_Like;
 }
 
 

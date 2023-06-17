@@ -82,9 +82,9 @@ public static final String ANSI_RED = "\u001B[31m";
          Scanner sc = new Scanner(System.in);
 	   int choice;
 	   do {
-		      System.out.println(ANSI_BLUE+" ---------------------------");
-		      System.out.println(" |   Welcome :"+ANSI_YELLOW+name+ANSI_BLUE+"      |");
-		      System.out.println(" ----------------------------"+ANSI_RESET);
+     System.out.println(ANSI_BLUE+" ---------------------------");
+		      System.out.println(" |   Welcome : "+ANSI_YELLOW+name+ANSI_BLUE+"      |");
+		       System.out.println(" ---------------------------"+ANSI_RESET);
 		 	  System.out.println(ANSI_YELLOW+"ENTER : 1 FOR Add new recipe");
 		 	  System.out.println("ENTER : 2 FOR Update recipe");
 		 	  System.out.println("ENTER : 3 FOR Delete recipe");
@@ -142,7 +142,7 @@ public static final String ANSI_RED = "\u001B[31m";
 	    em.persist(rd);
 	    
 	    Admin_details ad = em.find(Admin_details.class,User_Id);
-	    System.out.println(ad);
+	    
 	    List<Recipe_details> ls = ad.getList();
 	    ls.add(rd);
 	    ad.setList(ls);
@@ -173,9 +173,14 @@ public static final String ANSI_RED = "\u001B[31m";
 		System.out.println(ANSI_YELLOW+"ENTER : 1 FOR Update Name");
 	    System.out.println("ENTER : 2 FOR Update Ingridents"); 
 	    System.out.println("ENTER : 3 FOR Update Steps"+ANSI_RESET); 
+	    int ch;
+	    try {
+	    	 ch = sc.nextInt();
+		} catch (Exception e) {
+		     ch=5;
+		     
+		}
 	    
-	    
-	    int ch = sc.nextInt();
 	   sc.nextLine();
 	    if(ch==1){
 	    	System.out.println(ANSI_BLUE+"Enter New Name"+ANSI_RESET); 
@@ -247,7 +252,7 @@ public static final String ANSI_RED = "\u001B[31m";
 				  System.out.println(ANSI_RED+"Not Found ! "+ANSI_BLUE+"(please Add Recipes)"+ANSI_RESET);
 			  }else {
 			  for(Recipe_details rd : ls) {
-				  System.err.println(ANSI_BLUE+"Recipe_Name  :"+ANSI_YELLOW+rd.getRecipe_Name()+ANSI_BLUE+"  No. of Likes :"+ANSI_RED+rd.getLike()+ANSI_RESET);
+				  System.err.println(ANSI_GREEN+"Recipe_Id : "+ANSI_YELLOW+rd.getRecipe_Id()+ANSI_GREEN+" Recipe_Name  : "+ANSI_YELLOW+rd.getRecipe_Name()+ANSI_GREEN+"  No. of Likes : "+ANSI_RED+rd.getLike()+ANSI_RESET);
 			  }
 			  }
 			  ts.commit();
