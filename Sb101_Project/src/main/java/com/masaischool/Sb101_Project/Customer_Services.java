@@ -28,7 +28,14 @@ public static final String ANSI_RED = "\u001B[31m";
  		   int count=0;
  		  List<Customer_details> add = que.getResultList();
  		  if(add.size()==0) {
- 			  System.out.println(ANSI_RED+"Customer Not Found ! "+ANSI_RESET);
+ 			 Customer_details ad = new Customer_details();
+				ad.setCustomer_Name(cus_name);
+				ad.setCustomer_Pass(cus_pass);;
+				ts.begin();
+				em.persist(ad);
+				ts.commit();
+				System.out.println(ANSI_GREEN+"Thanks " +ANSI_YELLOW+cus_name+ ANSI_GREEN+" For SignUp"+ANSI_RESET);
+		
  		  }else {
  			for(Customer_details ad : add) {
  				if(ad.getCustomer_Name().equals(cus_name)) {
