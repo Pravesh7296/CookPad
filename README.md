@@ -31,7 +31,6 @@ Log out from the Recipe Management System.
 - Update existing recipes with new information.
 - Delete recipes from the system.
 - View the number of likes received by each recipe.
-- Generate reports on recipe likes and popularity.
 - Log out from the admin account.
 
 
